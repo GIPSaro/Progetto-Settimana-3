@@ -555,11 +555,30 @@ addLi("PISOLO");
 */
 console.log("ESERCIZIO 25");
 
+const removeList = () => {
+  let ulMyList = document.getElementById("myList");
+  while (ulMyList.firstChild) {
+    ulMyList.removeChild(ulMyList.firstChild);
+  }
+};
+//removeList();
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
+console.log("ESERCIZIO 26");
+
+const changeColor = () => {
+  let tr = document.querySelectorAll("tr");
+  for (let i = 0; i < tr.length; i++) {
+    tr[i].classList.add("test");
+  }
+};
+changeColor();
+
 // [EXTRA] JS Avanzato
+console.log("EXTRA JS AVANZATO");
 
 /* ESERCIZIO 27
   Crea una funzione chiamata "halfTree" che riceve un numero come parametro e costruisce un mezzo albero di "*" (asterischi) dell'altezza fornita.
@@ -572,6 +591,15 @@ console.log("ESERCIZIO 25");
   ***
 
 */
+console.log("ESERCIZIO 27");
+
+const halfTree = (caract) => {
+  for (let i = 1; i <= caract; i++) {
+    console.log("*".repeat(i));
+  }
+};
+
+halfTree(3);
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -585,9 +613,39 @@ console.log("ESERCIZIO 25");
 
 */
 
+console.log("ESERCIZIO 28");
+
+const Tree = (caract) => {
+  for (let i = 1; i <= caract; i++) {
+    const space = " ".repeat(caract - i);
+    const stars = "*".repeat(2 * i - 1);
+    console.log(space + stars);
+  }
+};
+Tree(5);
+
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+console.log("ESERCIZIO 29");
+const isItPrime = (num) => {
+  let isPrime = true;
+  if (num === 1) {
+    console.log("1 non è un numero primo");
+  } else if (num > 1) {
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+        isPrime = false;
+      }
+    }
+    if (isPrime) {
+      console.log(`${num} è un numero primo`);
+    } else {
+      console.log(`${num} non è un numero primo`);
+    }
+  }
+};
+isItPrime(71);
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
@@ -705,4 +763,4 @@ console.log("ESERCIZIO 25");
     Poster:
       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg"
   }
-];*/
+]; */
