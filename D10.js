@@ -127,8 +127,24 @@ console.log(deleteOne("NICE", 25 > 99));
 */
 console.log("ESERCIZIO 5");
 
-const onlyLetters = (string) => {};
+const onlyLetters = (string) => {
+  let withoutNumb = "";
+  for (let i = 0; i < string.length; i++) {
+    const currentLetter = string[i];
 
+    if (
+      currentLetter !== "0" &&
+      currentLetter !== "1" &&
+      currentLetter !== "2" &&
+      currentLetter !== "3" &&
+      currentLetter !== "4"
+    ) {
+      withoutNumb = withoutNumb.concat(currentLetter);
+    }
+  }
+  console.log(withoutNumb);
+};
+onlyLetters("I have 4 dogs");
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
@@ -261,7 +277,7 @@ console.log(deleteProp(me, "surname")); // ho usato l'oggetto me precedentemente
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
-console.log("ESERCIZIO 13");
+
 const movies = [
   {
     Title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -377,6 +393,7 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg"
   }
 ];
+console.log("ESERCIZIO 12");
 
 const newestMovie = (arr) => {
   let result = { Year: 1963 };
@@ -440,13 +457,18 @@ console.log(
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
 console.log("ESERCIZIO 17/1");
+
 //non ho capito se l'esercizio chiede questo:
+
 const searchByTitle = (string) => {
   return string.map((elem) => elem.Title);
 };
 console.log(searchByTitle(movies));
+
 console.log("ESERCIZIO 17/2");
+
 //o questo:
+
 const searchByTitle2 = (string1) => {
   for (let i = 0; i < movies.length; i++) {
     if (movies[i].Title.toLocaleLowerCase().includes(string1)) {
@@ -490,10 +512,13 @@ const removeIndex = (num) => {
 console.log("Qui ho rimosso il film nella 12esima posizione:", removeIndex(11));
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
+
 console.log("DOM");
+
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
+
 console.log("ESERCIZIO 20");
 
 const container = () => {
@@ -512,6 +537,7 @@ const td = () => {
   console.log(td);
 };
 td();
+
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
@@ -538,9 +564,11 @@ const backgroundRed = () => {
   }
 };
 backgroundRed();
+
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+
 console.log("ESERCIZIO 24");
 
 const addLi = (strng) => {
@@ -561,6 +589,7 @@ const removeList = () => {
     ulMyList.removeChild(ulMyList.firstChild);
   }
 };
+
 //removeList();
 
 /* ESERCIZIO 26
@@ -646,6 +675,7 @@ const isItPrime = (num) => {
   }
 };
 isItPrime(71);
+isItPrime(21);
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
