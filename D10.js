@@ -137,7 +137,12 @@ const onlyLetters = (string) => {
       currentLetter !== "1" &&
       currentLetter !== "2" &&
       currentLetter !== "3" &&
-      currentLetter !== "4"
+      currentLetter !== "4" &&
+      currentLetter !== "5" &&
+      currentLetter !== "6" &&
+      currentLetter !== "7" &&
+      currentLetter !== "8" &&
+      currentLetter !== "9"
     ) {
       withoutNumb = withoutNumb.concat(currentLetter);
     }
